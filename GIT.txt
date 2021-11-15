@@ -1,0 +1,144 @@
+1. Qué es Git
+
+	Documentación oficial: https://git-scm.com/docs
+
+	Git es un software de control de versiones que funciona por "ramas" desde la CMD 
+	mediante comandos.
+	
+	Un software de control de versiones te ayuda a crear un proyecto y controlar los 
+	cambios en el código, en los archivos, etc.
+
+2. Cómo funciona Git
+	
+	Al crear un repositorio con Git se crea automáticamente una rama llamada "master".
+	
+	Git permite crear varias ramas donde desarrollar distintas modificaciones a un
+	proyecto. Lo que se desarrolle o se haga en una rama no afecta a las demás ramas ni
+	a la rama "master". Con Git se puede crear ramas, unir ramas (es decir, aplicar a 
+	una rama los cambios efectuados en otra), eliminar ramas, recuperar el estado
+	previo de un proyecto, etc.
+
+3. Flujo de trabajo habitual y comandos básicos de Git.
+
+	Nota: 
+		"$~" representa un comando en la consola, 
+		"[...]" representa un listado de opciones,
+		"<...>" representa un nombre
+
+	Para usar Git el flujo de trabajo suele ser el siguiente:
+		
+		1. Crear un repositorio.
+		
+			$~ git init
+
+		2. Comprobar los cambios realizados y en qué rama estás.
+
+			$~ git status
+
+		3. Una vez que se han realizado cambios, se añaden al "workspace".
+
+			$~ git add [* | filename | filename_1 filename_2]
+
+		4. Firmar los cambios.
+
+			$~ git commit -m "Mensaje para firmar los cambios"
+
+	Firmar los cambios es como llegar a un "checkpoint" en un videojuego. En caso de
+	programar algo que no funciona, puedes restaurar el proyecto a cualquiera de esos
+	"checkpoints" anteriores (o sea, volver a una versión anterior de tu rama). También
+	hay que firmar los cambios si quieres aplicar estos cambios a otra rama.
+
+4. Comandos básicos:
+
+	· Crear una nueva rama.
+
+		$~ git checkout -b <branch_name>
+
+		O también:
+
+		$~ git branch <branch_name>
+		$~ git switch <branch_name>
+
+	· Listar las ramas existentes.
+
+		$~ git branch --list
+			
+	· Aplicar los cambios de una rama a otra.
+
+		Vas a la rama "A", que va a recibir los cambios:
+
+			$~ git switch <branch_A>
+
+		Aplicas los cambios de la rama "B":
+
+			$~ git merge <branch_B>
+
+	· Eliminar una rama cuando ya no la necesitas.
+
+		$~ git branch [-d | --delete | -D | --delete --force] <branch_name>
+
+	· Eliminar el contenido de una rama
+	
+		(Se eliminan manualmente y se actualiza el master)
+
+	· Renombrar una rama.
+
+		$~ git [-m | --move | -M | --move --force] <old_branch_name> <new_branch_name>
+
+	· Enlazar un repositorio de GitHub
+	
+		$~ git remote add "origin" <URL>	adding.git   --> <remote>==origin	
+
+	· Eliminar el repositorio enlazado
+		
+		$~ git remote rm "origin"
+
+	· Subir los cambios a GitHub.  OJO--> Si no hay rama master, hay que crearla y mandar la info a esa. Tras eso, nos movemos la rama deseada y la enviamos. Si no, git se vuelve crazy
+
+		$~ git push [-u | --set-upstream] <remote> <branch_name>
+
+	·Ver URL asociada a un remote
+	
+		$~ git remote -v
+
+	·Bajar rama de un repositorio
+		
+		$~ git fetch --all
+		En caso de fatal: unable to access URL:
+			$ git config --global --unset http.proxy 
+			y si no 
+			$ git config --global --unset https.proxy
+
+
+		$~ git branch --set-upstream-to=<remote>/<branch_name> <git_branch_name>
+		$~ git pull 
+		$~ git pull --allow-unrelated-histories --> en caso de que de error
+	
+	· Bajar los cambios de GitHub.
+
+		$~ git pull [-u | --set-upstream] <remote> <branch_name>
+
+	. Si ya esta todo asociado (origen/<branch_name>)
+		
+		$~ git pull (Bajar)			
+		$~ git push (Subir)
+	
+	· Bajar un único archivo de GitHub.
+
+		$~ git fetch --all
+		$~ git checkout <remote>/<remote_branch> -- <path>/<to>/<file>
+
+	· Checkear los archivos de la carpeta de git (del PC)
+
+		$~ git ls-files
+
+	
+	// Add commands here...
+
+	
+	~ Credits ~
+	+------------------------+
+	|		         |
+	|	 Arturo B 	 |
+	|		         |
+	+------------------------+

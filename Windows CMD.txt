@@ -1,0 +1,68 @@
+
+ -- NO es sensible a las mayusculas
+
+	dir --> visualizar el interior de un directorio
+		(dir /s --> Directorio con detalle)
+		(dir /?) --> Help
+		(dir /w) --> muestra en ancho
+
+	cd --> moverte por directorios 
+		(cd .. --> Subir directorio superior)
+		(cd/ --> Al root)
+	
+	cls --> clear la screen
+
+	Ctrl + C --> para 
+
+	___ /? --> help de lo que sea
+
+	tree --> Hace arbol de directorios (de carpetas) de lo que haya por debajo 
+		tree /f --> arbol de directorios + archivos
+	
+	help --> Ayuda de los comandos
+	
+	Al inicializar el cmd como administrador tenemos derechos de administrador
+
+	copy --> copiar un directorio en algun emplazamiento que queramos 
+		Ej: copy "cambio_monedas.java" .. --> copiar el archivo .java en el directorio superior
+		Ej: copy *.java .. --> copia todos lpos archivos .java arriba		
+		Para copiar aqui --> copy <directorio> . (aqui)		
+
+	Del --> delete <nombre del archivo con extension>
+		(Mismas configuraciones de )
+
+	robocopy --> copia todo el directorio (con los respectivos archivos) de un sitio en otro sitio
+		robocopy /s --> copia todo pero si el directorio está vacio, no lo copia
+	
+		copia icremental --> se añade a lo que habia antes
+		Opciones:
+
+			/MIR --> Eliminar los archivos que estan en el destino pero no en el origen
+			/
+	mkdir --> crear directorio
+
+		robocopy <origen> <destino> <opciones> 
+			Ej: robocopy . g:\"Backup" /MIR /R:0 /W:0 
+				"Copia lo que hay en esta (.) carpeta, en el destino (g:\Backup). De modo que superpone (/MIR), no hace reintento (mide en veces) y no espera (segundos)"
+			
+		eliminar todo de algun sitio: del *.* /s /q /f --> borrar --> (del); todos los archivos (todos.todos) --> (*.*); para abajo (carpetas, subcarpetas y subsubcarpetas) --> (/s); no preguntes --> (/q); fuerza(tambien los archivos de solo lectura) --> (/f)
+	rmdir --> elimina directorios
+	
+	mo --> mover (Como copy pero borra el original)
+
+	ren --> rename
+
+------------------------------ Diagnostico del equipo -----------------------------
+
+	systeminfo --> datos del equipo
+
+		host: nombre del equipo
+		 
+	ipconfig --> ip del equipo:
+			
+			Direccion IPv4 --> salida alinternet (todos los equipos conectados a un mismo router comparten los 2 primeros valores _idem_._idem_.____.____)
+			Mascara de subred --> Por cada 
+			
+			_____._____._____._____ ==> (ID Red) ___.___ || ___.___ (ID dispositivo)
+			
+			

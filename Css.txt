@@ -1,0 +1,57 @@
+
+General
+
+	atributo--> va en el html (Ej: <input type="" style="" ... >)
+	etiqueta/elemento--> llamamiento <style (type=text/css --> esto no es necesario añadirlo, pues se implemenó en la naturqleza del style)></style>
+	link--> <link href="<ruta acceso>" rel="stylesheet" (type=text/css)-->no es necesario añadir />
+	
+	h1, h2, h3 {... } --> se le aplica a h1, h2 y h3
+
+Selectores
+
+	tipo --> lo que es (ej <p>, <div>, <h1>, <main>, <input>...)
+	clase --> class="<nombre_clase>" // Llamar en css: .<nombre_clase>{...} // Aplicable a multiples elementos
+	identidad --> id="<nombre_id>" // Llamar en css: #<nombre_id>{...} // Aplicable a un solo elementos
+
+	universal --> *{...} // Se aplica a todo el CSS. Sirve para inicializar propiedades. 
+	*{
+		padding:0;
+		margin:0;
+
+	}
+
+	concreto --> __:__{...} // a:link{text-decoration: none} // modifica (quita cosas del texto) a los enlaces no visitados (que se encuentren en <a>)
+				// a:visited{text-decoration: none} // modifica (quita cosas del texto) a los enlaces visitados (que se encuentren en <a>)
+ 				// :hover {...} // modifica aquello sobre lo que se encuentre el puntero del mouse (OJO--> tabletas y smartphones no tienen esta caracteristica)
+				// a:active {...} // modifica mientras el mouse esta pulsando (solo es aplicable a hipervinculos)
+ 				// :focus {...} // resalta el campo que esta seleccionado (muy util para formularios)
+				// :first-child {...} // se aplica al primer elemento de una serie
+				// :first-letter {...} // se aplica a la primera letra
+				// :first-line {...} // se aplica  a la primera linea de un párrafo (suelen estar separados por br)
+				// ___+___{..} // se aplica a los elementos (se le puede añadir clase o Id si requiere) que esten inmediatemente contiguos al primer elemento
+				
+
+	anidamiento --> elemento /./#(solo/clase/identidad)<name> > elemento2 {...}
+			Ej: ul#title > li {a} --> Hace referencia al elemento (li) que esta dentro de (ul), con id: tittle
+
+	atributo --> a[...] {...} // Las propiedades de aplican para todos los elementos que tengan ese atributo (Ej: a[type] {..} --> Se aplica a todos los elementos que tengan en su descripcion una etiqueta type, sin importar el valor
+														  Ej: a[type=""] --> Igual que arriba pero solo a la/las que tenga el type=""
+				
+Propiedades de css:
+
+	*color: define el color del texto
+		color: name; --> Nombre caracteristico del color
+		color: rgb (x, x, x); --> Red Green Blue		
+		color: #RRGGBB --> #xxx --> Hexadecimal	(Mas comun). Compuesto por 6 valores (3 parejas). Si los valores son idem en una pareja, se puede suprimir uno. Ej: negro: #000000 --> #000
+																				    blanco: #FFFFFF -> #FFF
+	- background-color : define el color de fondo
+	- border-color: color del borde
+ 
+	font-family: estilo de fuente (Para concatenar usar ',' Del primero al ultimo iria: si no se puede / esta disponible, paso al siguiente)
+	font-size: tamaño de fuente
+
+	Unidades de medida:
+	
+	_em --> indica que el taño será _ veces el tamaño base
+ 
+	
