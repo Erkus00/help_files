@@ -1,0 +1,187 @@
+Terminal en Linux: (Linux no pregunta para hacer nada. Ni al eliminar ni al copiar archivos de un sitio a otro. Superposicion Siempre)
+ 
+button_derecho: open terminal
+	
+	@ == at	
+	~ == estas en tu directorio personal
+	$ == estas en root (raiz)
+	pwd == en que carpeta estas
+	cd / == directorio raiz (root)
+	cd == te mueve al directorio personal
+	ls == listar (Carpetas) lo que hay para abajo // ¿Preguntar (ver) q hay dentro de X carpeta?
+	ls -R == lista del root para abajo con subdirectorios 
+	Ctrl + C == Interrupcion del proceso actual
+	clear == limpia la cmd 
+	ls -a == enseña todo lo que hay para abajo
+	ls -l == lista en filas e indica las caracteristicas
+	cd ..== mover directorio superior
+	cd . == en mismo directorio
+	cd ../.. == mover 2 directorios superiores
+	-al == detalles de cada directorio/archivo
+	-R == Todo
+	ls -al == te saca una lista de los detalles de cada directorio/archivo
+	cat == concatenar cosas. Hacer cosas con ficheros
+	
+	Standard Input== ">" 
+	"cat > ejemplo.txt" --> Todo lo que entre por teclado te lo guarda en el archivo ejemplo.txt . Despues se da Enter y Ctrl+C
+	Para ir: cat "Nombre del archivo" (Se puede sobreescribir o continuar. Pero no editar con este comando)
+	
+	cat ejemplo.txt --> Lees lo que hay en el archivo
+	cat > ejemplo.txt --> Sobreescribes (o creas si no existe)
+	cat >> ejemplo.txt --> Continuas
+
+	cat ejemplo.txt | tr a-z A-Z >mayusculas.txt == Coge el archivo ejemplo.txt y copia el contenido en mayuscula en mayusculas.txt
+	tr == trasladar el primer valor al segundo 
+	| == te permite poner varios comandos en linea
+	cat ejemplo.txt mayusculas.txt >superarchivo.txt (Crea un archivo con los anteriores)
+	
+	*.txt (mostraria todos los archivos que acaben en.txt)
+	ls D* (Muestra todo lo que empieza en D)
+	
+	Utilidad:
+		ls img*.jpg --> Selecciona las imagenes q empiezan por img___.jpg
+		ls img*.png --> Selecciona las imagenes q empiezan por img___.png
+		ls pic*.jpg --> Selecciona las imagenes q empiezan por pic___.jpg
+
+	Comandos: 
+	cp == copiar (crear un duplicado y colocar el duplicado en la carpeta del otro lado) Ej: cp *.txt Downloads/ 			(Guarda todos los archivos .txt en la carpeta Downloads)
+	mv == mover 
+	mv superarchivo.txt megaarchivo.txt (Cambiar nombre)
+	rm == borrar archivo
+		rm -R * --> Borra todo lo que haya en un directorio // Tocho: rm -rmv * (No pregunta)
+
+	mkdir == Crear un directorio
+	rmdir == eliminar directorio
+
+	man ___ == es como el help
+	
+	El tabulador es un atocompletar.
+	
+	locate == mas rapido chivo y te dice donde está --> locate "nombre_del_archivo"; locate -i "_____"; el -i coje y no hace diferencia entre mayusc y minusc.
+	
+	find == busca archivos pero es mas lento por que va carpeta a carpeta
+	
+	-c == te hace la cuenta del numero de archivos (hay que poner de donde sales y que estas buscando) --> find / -name data.txt
+	
+	log --> es un archivo que crean las aplicaciones a modo de cuaderno de vitacora (en caso de fallo)
+	grep == buscar  (grep -i "____" bombre del archivo) busca la palabra sin importancia de la mayusc./minusc.) Te saca la linea
+	Ej: grep error *_____________* --> Remarca la palabra "error" en el archivo log
+	
+	sudo --> ! en vim ()
+	sudo su --> quitando el > es el sudo super y te mete en el modo root (administrador). Pone el color en blaco completo
+	visudo --> te permite modificar los valores
+	exit --> Salir del modo sudo su
+	
+	------------------------------------------------------------------------------------------------------------------
+	Instalar cosas en Linux:
+		2 modos --> 1. Repositorio (Estan en una nube)
+			    2. Descargando
+			    
+	Depende de la distribucion (Ubuntu y debian son iguales)--> sudo apt install "sl" -> este es el nombre del programa a instalar (sin comillas)
+	
+	sl --> tren
+	cowsay --> la vaca dice
+	fortune --> frases aleatorias
+	xcowsay --> Vaca con interfaz graficay
+	toilet --> Pone en letras grandes ("Ej: toilet -f mono12 -F metal _____________")
+	cmatrix --> Saca la visual de matrix
+	onek --> gato que sigue el raton
+	espeak --> Escribe algoque quieres que el programa diga por los altavoces
+	libaa-bin --> Saca git visual (aafire: fuego)
+	bb --> video
+	pacman --> instala el pacman
+	.
+	.
+	.
+	
+	wget http://search.cpam.org/CPAN/authors/id/K/KB/KBAUCOM/Term-Animation-2.6-tar.gz
+		tar -zxvf Term-Animation-2.6.tar.gz
+			perl Makefile.PL && make && make test
+				(En el directorio)--> sudo make install
+	
+	
+				
+	Ej: "fortune | cowsay" salida de fortune la saca en el siguiente
+	
+	
+	
+	-------------------------------------------------------------------------------------------------------------------
+	rev --> escribes algo y lo saca al reves
+	factor --> Descompone en factores primos
+	yes --> bucle infinito que permite estar ejecutando 
+	-h --> Help
+	killall -9 ______ --> mata todo _______ sin preguntar
+	ps --> procesos que hay en memoria
+	wget --> va a la web y descarga lo que haya
+		(Ej: wget http://search.cpam.org)
+	tar --> descompresor/compresor
+
+	Los programas se guardan en bin
+	chmod --> Cambia los permisos de uso de un fichero (4 valores) (a,b,c,d)
+	a. Tipo (0 Directorio 1 Archivo)
+	b. que puede hacer el grupo con el archivo
+	c. que puede hacer el grupo con el archivo
+	d. el resto del mundo con el archivo
+
+	----------------------------------------------------------------------------------------------------------
+	df --> uso del disco
+	df -i --> 
+	ls -l -h --> Lista el directorio(ls) en columnas bonitas(-l) y en un lenguaje as humano (-h)
+	
+	-----------------------------------------------------------------------------------------------------------
+	head _____________ --> Enseña archivos (10 primeras lineas) "add" -n __ --> indica las lineas q te interesen 
+	tail _____________ --> Enseña archivos (10 ultimas lineas) "add" -n __ --> indica las lineas q te interesen
+	
+	diff <archivo1> <archivo 2> --> compara los archivos
+	diff <archivo1> <archivo 2> -i --> compara sin importar May/min
+
+	tar: --> Te permite realizar copias de seguridad
+				tar -cvf (c create, v verbose, f file ) <nombre del archivo> <Ubicacion> --> hay que realizar el comando desde el Directorio principal cd
+				tar -tvf (Te permite visualizar el archivo .tar)
+				--> Ver uno solo: "add" <main branch/name>
+				tar -rvf (Te permite añadir archivos a un .tar)
+				tar -xvf ... (Extraer un archivo)
+				tar -zcpvf (Crea archivo comprimido) --> .tar.gz
+				tar -zxpvf (Descomprime el archivo)
+				
+		chmod: --> cambia los permisos del usuario (los permisos en linux se distribuyen en: "yo, mis amigos, el resto del mundo")
+				valores de ls -l (codigo num/let al inicio):   d| --- | --- | --- => directorio (S/n)| rwx | rwx | rwx
+					d-->directorio
+
+					r-->read (permite verlo con un 1)
+					w-->write (permite hacer cosas con el archivo con un 1)
+					x-->execute (permite acceder al directorio con un 1)
+					
+
+
+						-->Permisos: 	|	666 (Todo el mundo puede leer y escribir) -| 110 | 110 | 110
+										|	777 (Apk publica) -| 111 | 111 | 111
+										|	222 (todo el mundo puede borrarlo pero nadie tiene acceso a el) -| 010 | 010 | 010 
+										|	555 (Archivo ejecutable no borrable) -| 101 | 101 | 101 
+										|	444 (solo lectura para to quisqui) - | 100 | 100 | 100 
+
+
+
+		chown --> cambiar los permisos de otro usuario
+					Desde el directorio donde se encuentra el archivo: chown <usuario> <archivo> // (si quieres que sea el root el controlador: sudo su)
+					chmod _ _ _ <archivo> (Cambio de permisos)
+					al salir del modo root, tendremos los permisos de "Nuestros amigos"
+
+				Ctrl+z --> Parada del proceso pero sin cancelarlo
+
+				jobs --> indica los procesos que estan desarrollandose (en lista)
+				ps --> indentificador de procesos bien explicado (programas que estan usando memoria en el momento de mandar el comando)
+				kill sigterm--> Matar el proceso
+				hill 15
+				kill -l --> Indica todos los tipos de kill
+
+ping --> Sirve para mandar una señal y esperar la respuesta. Se hace sobre servidores
+uname --> Informacion acerca del sistema
+history --> saca los comandos que hemos metido en el Linux
+
+-------------------------------------------------------------------------------------------------------------
+CREACION USUARIOS
+
+useradd --> crear usuario
+userdel --> destruir al usuario
+
