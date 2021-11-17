@@ -1,0 +1,3 @@
+
+	Abrir archivo en sublime desde cmd --> subl ().()
+	Ctrl + ç --> Comenta linea (HTML, )
