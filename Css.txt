@@ -1,9 +1,9 @@
 
 General
-
+	<!DOCTYPE=html>
 	atributo--> va en el html (Ej: <input type="" style="" ... >)
 	etiqueta/elemento--> llamamiento <style (type=text/css --> esto no es necesario añadirlo, pues se implemenó en la naturqleza del style)></style>
-	link--> <link href="<ruta acceso>" rel="stylesheet" (type=text/css)-->no es necesario añadir />
+	link--> <link href="<ruta acceso>" rel="stylesheet" (type=text/css)-->no es necesario añadir >
 	
 	h1, h2, h3 {... } --> se le aplica a h1, h2 y h3
 
@@ -52,6 +52,30 @@ Propiedades de css:
 
 	Unidades de medida:
 	
-	_em --> indica que el taño será _ veces el tamaño base
+	_em --> indica que el tamaño será _ veces el tamaño base (Reponsive)
+	% --> con respesto al tamaño de pantalla (Responsive)
+	px --> pixeles
+	vw --> reponsive para 'width'
+	vh --> responsive para 'height'
+
+	
+	list-style-type --> define el tipo de elemento previo (marcador de cada <li>)
+	list-style-position --> Valores: Outside/Inside --> Cambia la posicion por si deseamos hacer listas dentro de listas
+	list-style-image --> elemento previo: imagen
+
+--Posicionamiento--
+	
+	Conceptos:
+	
+	Elemento de linea: su default es uno al lado de otro
+		Envolver en div el conjunto  
+	Elemento de bloque: un contenedor de algo o algo 			
+		
+		display {
+			inline_block --> En linea --> Aplicado a elementos de bloque (Ej: h1)
+			block --> Uno bajo a otro --> Aplicado a elementos de linea (Ej: a)
+			
+			}
+
  
 	
