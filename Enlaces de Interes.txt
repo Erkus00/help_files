@@ -1,0 +1,2 @@
+https://docs.microsoft.com/es-es/learn/paths/build-dotnet-applications-csharp/ --> Curso de C# con .NET
+http://platea.pntic.mec.es/jdelucas/javascript.htm --> Curso JavaScript Basico
