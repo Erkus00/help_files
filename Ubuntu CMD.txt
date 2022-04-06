@@ -185,3 +185,10 @@ CREACION USUARIOS
 useradd --> crear usuario
 userdel --> destruir al usuario
 
+--------------------------------------------------------------------------------------------------------------
+Si se le añade & a la sentencia en CMD, se ejecuta y se pueden seguir añadiendo sentencias. En caso de no añadir nada, solo podremos añadir sentencias en caso de cerrar el emergente
+Ej: 
+En ambos casos al cerrar la CMD, el editor se cierra. Esto no pasa en Windows
+gedit --> Abre editor de txt, pero no se pueden añadir sentencias hasta que el editor se cierre 
+gedit& --> Abre editor de texo y se puede añadir otra sentencia a la par que este esta abierto
+
