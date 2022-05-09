@@ -129,6 +129,7 @@
 	. Trabajo con mergetool 
 
 		https://stackoverflow.com/questions/161813/how-do-i-resolve-merge-conflicts-in-a-git-repository
+		https://examples.javacodegeeks.com/software-development/git/git-mergetool-example/
 
 	. Revisar los cambios antes de iniciar el  mergetool
 		git diff <branch A> <branch B>
