@@ -133,12 +133,12 @@
 		$~ git ls-files
 
 	
-	// Add commands here...
+	. Volver al commit anterior/deseado:
+		
+		(Anterior/Especifico) Borrando todo lo hecho: $~git reset --hard (commit code)
+		(Anterior/Especifico) Manteniendo los cambios: $~git reset --soft (commit code)
+		
 
-	
-	~ Credits ~
-	+------------------------+
-	|		         |
-	|	 Arturo B 	 |
-	|		         |
-	+------------------------+
+	. Limpiar una rama
+
+		$~git rm -r * (Posteriormente hacer un commit y un pusheo)
