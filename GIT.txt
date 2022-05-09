@@ -130,6 +130,7 @@
 
 		https://stackoverflow.com/questions/161813/how-do-i-resolve-merge-conflicts-in-a-git-repository
 
-	
+	. Revisar los cambios antes de iniciar el  mergetool
+		git diff <branch A> <branch B>
 
 	
