@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 https://www.atlassian.com/es/git/tutorials/comparing-workflows/gitflow-workflow --> Fujo de Trabajo de Gitflow
+=======
+https://www.atlassian.com/es/git/tutorials/comparing-workflows/gitflow-workflow --> Fujo de Trabajo de Gitflow
+>>>>>>> b39e0e19537c8c053d5ee5649a69f23dd3f5cf3c
