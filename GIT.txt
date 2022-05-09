@@ -1,9 +1,14 @@
 1. Documentación oficial:
 
 	https://git-scm.com/docs
+
+2. Configuracion de Git
+	$ git config --global user.name "name" --> Establecer
+	$ igt config --global user.name
+	
 	
 
-2. Flujo de trabajo habitual y comandos básicos de Git.
+3. Flujo de trabajo habitual y comandos básicos de Git.
 
 	Nota: 
 		"$~" representa un comando en la consola, 
