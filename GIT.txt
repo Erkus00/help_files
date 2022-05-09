@@ -126,6 +126,14 @@
 		(Anterior/Especifico) Borrando todo lo hecho: $~git reset --hard (commit code)
 		(Anterior/Especifico) Manteniendo los cambios: $~git reset --soft (commit code)
 		(Volviendo 'n' veces hacia atras) $~git reset --hard ~'n'
+		
+		Opciones que retroceden de commit pero no lo establecen. Simplemente permiten navegar por los mismos --> hasta hacer un checkout de la rama en cuestion 		que te devolverán a la situacion:
+		
+				# Para ir a un commit concreto utilizaremos su hash
+					git checkout [hash_commit]
+
+				# Para ir n commits hacia atrás podemos utilizar esta sintaxis
+					git checkout HEAD~[n]
 	
 	. Editar un commit sin haber hecho un push 
 		
