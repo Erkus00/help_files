@@ -155,6 +155,7 @@
 		$~ git log <Opcion>=
 		
 	Opción			Descripción
+	
 	-(n)			Muestra solamente las últimas n confirmaciones
 	--since, --after	Muestra aquellas confirmaciones hechas después de la fecha especificada.
 	--until, --before	Muestra aquellas confirmaciones hechas antes de la fecha especificada.
@@ -164,13 +165,14 @@
 	
 	
 	Opción				Descripción
+	
 	-p				Muestra el parche introducido en cada confirmación.
 	--stat				Muestra estadísticas sobre los archivos modificados en cada confirmación.
 	--shortstat			Muestra solamente la línea de resumen de la opción --stat.
 	--name-only			Muestra la lista de archivos afectados.
-	--name-status			Muestra la lista de archivos afectados, indicando además si fueron añadidos, 						modificados o eliminados.
-	--abbrev-commit			Muestra solamente los primeros caracteres de la suma SHA-1, en vez de los 40 						caracteres de que se compone.
-	--relative-date			Muestra la fecha en formato relativo (por ejemplo, “2 weeks ago” (“hace 2 					semanas”)) en lugar del formato completo.
+	--name-status			Muestra la lista de archivos afectados, indicando además si fueron añadidos, modificados o eliminados.
+	--abbrev-commit			Muestra solamente los primeros caracteres de la suma SHA-1, en vez de los 40 caracteres de que se compone.
+	--relative-date			Muestra la fecha en formato relativo (por ejemplo, “2 weeks ago” (“hace 2 semanas”)) en lugar del formato completo.
 	--graph				Muestra un gráfico ASCII con la historia de ramificaciones y uniones.
-	--pretty			Muestra las confirmaciones usando un formato alternativo. Posibles opciones 					son oneline, short, full, fuller y format (mediante el cual puedes especificar tu 					propio formato).
+	--pretty			Muestra las confirmaciones usando un formato alternativo. Posibles opciones son oneline, short, full, fuller y format (mediante el cual puedes especificar tu propio formato).
 	
