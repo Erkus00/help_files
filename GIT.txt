@@ -133,7 +133,7 @@
 					git checkout [hash_commit]
 
 				# Para ir n commits hacia atrás podemos utilizar esta sintaxis
-					git checkout HEAD~[n]
+					git checkout HEAD~n
 	
 	. Editar un commit sin haber hecho un push 
 		
