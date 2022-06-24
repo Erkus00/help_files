@@ -165,3 +165,10 @@
 	--graph				Muestra un gráfico ASCII con la historia de ramificaciones y uniones.
 	--pretty			Muestra las confirmaciones usando un formato alternativo. Posibles opciones son oneline, short, full, fuller y format (mediante el cual puedes especificar tu propio formato).
 	
+	
+	Creditos:
+	
+	- Erkus00 --> https://github.com/Erkus00
+	- Colaboracion de Abm776 --> https://github.com/Arturo776
+	
+	
