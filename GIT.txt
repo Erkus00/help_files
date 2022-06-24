@@ -7,34 +7,23 @@
 	$ igt config --global user.name
 	
 	
-
-3. Flujo de trabajo habitual y comandos básicos de Git.
-
-	Nota: 
-		"$~" representa un comando en la consola, 
-		"[...]" representa un listado de opciones,
-		"<...>" representa un nombre
-
-	Para usar Git el flujo de trabajo suele ser el siguiente:
 		
-		1. Crear un repositorio.
+	1. Crear un repositorio.
 		
-			$~ git init
+		$~ git init
 
-		2. Comprobar los cambios realizados y en qué rama estás.
+	2. Comprobar los cambios realizados y en qué rama estás.
 
-			$~ git status
+		$~ git status
 
-		3. Una vez que se han realizado cambios, se añaden al "workspace".
+	3. Una vez que se han realizado cambios, se añaden al "workspace".
 
-			$~ git add [* | filename | filename_1 filename_2]
+		$~ git add [* | filename | filename_1 filename_2]
 
-		4. Firmar los cambios.
+	4. Firmar los cambios.
 
-			$~ git commit -m "Mensaje para firmar los cambios"
+		$~ git commit -m "Mensaje para firmar los cambios"
 			
-
-4. Comandos básicos:
 
 	· Crear una nueva rama.
 
