@@ -127,11 +127,20 @@
 	. Editar un commit sin haber hecho un push 
 		
 		$~ git commit --amend
+	
+	. Merge:
+		Parar el merge: $~ git merge --abort
+		Para traer todo lo que haya en un repositorio sobreescribiendo lo que haya en local:
+			$~ git fetch --all
+			$~ git reset --hard origen/master --> siendo origen el nombre del repositorio
+	
 
-	. Trabajo con mergetool 
+	. Trabajo con mergetool / enlaces utiles
 
 		https://stackoverflow.com/questions/161813/how-do-i-resolve-merge-conflicts-in-a-git-repository
 		https://examples.javacodegeeks.com/software-development/git/git-mergetool-example/
+		https://stackoverflow.com/questions/1125968/how-do-i-force-git-pull-to-overwrite-local-files
+
 
 	. Revisar los cambios antes de iniciar el  mergetool
 		$~ git diff <branch A> <branch B>
