@@ -8,7 +8,10 @@
 [![XMAPP](https://img.shields.io/badge/Xampp-F37623?style=for-the-badge&logo=xampp&logoColor=white)](https://www.apachefriends.org/es/index.html)
 
 #
-Symfony es un framework de php que resulta de gran utilidad pues agiliza todo el proceso de la creacion de la raiz de una aplicacion web. Implementado junto a XMAPP ahorra mucho tiempo y aumenta la eficiencia.
+Symfony es un framework de php que resulta de gran utilidad pues agiliza todo el proceso de la creacion de la raiz de una aplicacion web. 
+<br>
+
+Implementado junto a XMAPP (paquete de software libre, que consiste principalmente en el sistema de gestión de bases de datos MySQL, el servidor web Apache y los intérpretes para lenguajes de script PHP y Perl); ahorra mucho tiempo y aumenta la eficiencia.
 <br>
 Para instalar Symfony, son necesarios unos pasos previos
 
@@ -24,7 +27,11 @@ Para instalar Symfony, son necesarios unos pasos previos
     - [Descargar Composer](https://getcomposer.org/download/) --> Descargar el ejecutable o hacerlo mediante linea de comandos
 
 3. [Instalar Scoop](https://scoop.sh)
+
     - OJO: Ha de hacerse desde la PoweShell (que no es lo mismo que la CMD)
+
+    <br>
+
 
     > `Set-ExecutionPolicy RemoteSigned -Scope CurrentUser`
 
@@ -47,7 +54,10 @@ Para instalar Symfony, son necesarios unos pasos previos
             - Cerrar y volver a abrir XAMPP
 
 6. Comprobacion de que todo lo que hemos instalado funciona correctamente
+```console
+    > symfony check:requirements
 ```
+```sh
     > php -v
 
     > composer -v
@@ -63,7 +73,7 @@ Para instalar Symfony, son necesarios unos pasos previos
 
 Una vez esten instaladas las tecnologias, vamos a crear el proyecto como tal.
 
-## Pasos
+## Pasos Basicos
 
 [Documentacion Oficial](https://symfony.com/doc/current/doctrine.html)
 
@@ -73,14 +83,19 @@ Una vez esten instaladas las tecnologias, vamos a crear el proyecto como tal.
 
 2. Para poder realizar una aplicacion web, es necesario instalar una serie de librerias. Nos dirigimos al interior del directorio del proyecto y ejecutamnos en la cmd:
 
-    > `composer require symfony/orm-pack`
+    > `composer require orm`
 
-    > `composer require --dev symfony/maker-bundle`
+    > `composer require symfony/maker-bundle`
+
+
+#
+
+## Creacion de la Base de Datos
 
 3. El archivo **-env** habrá sido modificado. De modo que se han añadido una serie de lineas. Modificar la parte de _###> doctrine/doctrine-bundle ###_ del siguiente modo:
 
     - Vista Inicial:
-        ````
+        ````sh
         ###> doctrine/doctrine-bundle ###
         # Format described at https://www.doctrine-project.org/projects/doctrine-dbal/en/latest/reference/configuration.html#connecting-using-a-url
         # IMPORTANT: You MUST configure your server version, either here or in config/packages/doctrine.yaml
@@ -91,7 +106,7 @@ Una vez esten instaladas las tecnologias, vamos a crear el proyecto como tal.
         ###< doctrine/doctrine-bundle ###
         ````
     - Vista Editada (Linea 8) --> # (Sustituir en linea 9) / root / 3307 / NOMBREBASEDATOS
-        ````
+        ````sh
         ###> doctrine/doctrine-bundle ###
         # Format described at https://www.doctrine-project.org/projects/doctrine-dbal/en/latest/reference/configuration.html#connecting-using-a-url
         # IMPORTANT: You MUST configure your server version, either here or in config/packages/doctrine.yaml
@@ -102,23 +117,54 @@ Una vez esten instaladas las tecnologias, vamos a crear el proyecto como tal.
         ###< doctrine/doctrine-bundle ###
         ````
 
-        > El 'NOMBREBASEDATOS' será el nombre que recibira la base que crearemos a continuación
-#
+        > `El 'NOMBREBASEDATOS' será el nombre que recibira la base que crearemos a continuación`
 
 4. Ahora, tendriamos que crear la Base de Datos. Para ello, utilizaremos MySQL, pero la gestionaremos con PHPMyAdmin. Para la creacion de la misma base de datos: 
-
-> `php bin/console doctrine:database:create`
-
-y de las distintas *Entidades* y *Atributos*:
-
-> `php bin/console make:entity`
-
+    ```console
+    > php bin/console doctrine:database:create
+    ```
+    y de las distintas *Entidades* y *Atributos*:
+    ```console
+    > php bin/console make:entity
+    ```
 5. Para guardar todas las novedades que hayamos hecho:
-
-> `php bin/console make:migration`
-
+    ```console
+    > php bin/console make:migration
+    ```
 6. Una vez hayamos creado la entidad, deberemos crear un controlador:
+    ```console
+    > php bin/console make:controller ControllerName
+    ```
+    Al crear el controlador hay que tener en cuenta que hay que modificar la Ruta. Esta tendrá la siguiente estructura:
 
-> `php bin/console make:controller ControllerName`
+    ```php
+    #[Route('/...', name: '...')]
+    ```
 
+    La cambiaremos por:
 
+    ~~~php
+    /**
+    * @Route("/...", name="...")
+    */
+    ~~~
+    Nota: puede darse el caso de que al crearse lo haga directamente de la segunda forma. Permutar en caso de fallo para comprobacion pues a veces solamente es capaz de leer un tipo.
+
+7. Para las vistas, es necesario instalar:
+    ```console
+        > composer require doctrine/annotations (No es necesario. Instlar en caso de no encontrar motivo de error)
+
+        > composer require twig 
+
+        > composer require symfony/twig-bundle 
+
+    ```
+
+#
+
+## Comandos de la Terminal
+
+Ver las Rutas habilitadas
+```console
+    > symfony console debug:route
+```
