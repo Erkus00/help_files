@@ -85,7 +85,11 @@ Una vez esten instaladas las tecnologias, vamos a crear el proyecto como tal.
 
     > `composer require orm`
 
-    > `composer require symfony/maker-bundle`
+    En caso de que la aplicacion no nos funcione probar con: `composer require symfony/orm-pack`. 
+    
+    Pero primero con el comando que hay en el parrafo superior.
+
+    > `composer require --dev symfony/maker-bundle`
 
 
 #
@@ -119,7 +123,7 @@ Una vez esten instaladas las tecnologias, vamos a crear el proyecto como tal.
 
         > `El 'NOMBREBASEDATOS' será el nombre que recibira la base que crearemos a continuación`
 
-4. Ahora, tendriamos que crear la Base de Datos. Para ello, utilizaremos MySQL, pero la gestionaremos con PHPMyAdmin. Para la creacion de la misma base de datos: 
+4. Ahora, tendriamos que crear la Base de Datos. Para ello, utilizaremos MySQL, pero la gestionaremos con PHPMyAdmin. Para la creacion de la misma base de datos (tambien funcionan con `symfony console ...` en lugar de `php bin/console ...`): 
     ```console
     > php bin/console doctrine:database:create
     ```
@@ -127,10 +131,18 @@ Una vez esten instaladas las tecnologias, vamos a crear el proyecto como tal.
     ```console
     > php bin/console make:entity
     ```
-5. Para guardar todas las novedades que hayamos hecho:
+5. Para guardar todas las novedades que hayamos hecho (usar `symmfony console ...` en caso de encontrar problemas con el driver):
     ```console
     > php bin/console make:migration
     ```
+    ~~~~console
+    > php bin/console doctrine:migrations:sync-metadata-storage
+    ~~~~
+     ~~~~console
+    > php bin/console doctrine:migrations:migrate
+    ~~~~
+    En caso de seguir teniendo errores [usar este enlace](https://ourcodeworld.com/articles/read/1645/how-to-solve-symfony-6-exception-the-metadata-storage-is-not-up-to-date-please-run-the-sync-metadata-storage-command-to-fix-this-issue). Checkear la version de la base de datos --> `SELECT version();`
+    
 6. Una vez hayamos creado la entidad, deberemos crear un controlador:
     ```console
     > php bin/console make:controller ControllerName
@@ -152,13 +164,33 @@ Una vez esten instaladas las tecnologias, vamos a crear el proyecto como tal.
 
 7. Para las vistas, es necesario instalar:
     ```console
-        > composer require doctrine/annotations (No es necesario. Instlar en caso de no encontrar motivo de error)
+        > composer require doctrine/annotations 
+        
+        (No es necesario. Instalar en caso de no  encontrar motivo de error para probar si funciona o no+)
 
         > composer require twig 
 
-        > composer require symfony/twig-bundle 
 
+        > composer require symfony/twig-bundle 
+     
     ```
+8. Para introducir datos en la base de Datos y trabajar con ellos
+
+~~~console
+> composer require --dev orm-fixtures
+
+> composer require --dev doctrine/doctrine-fixtures-bundle
+~~~
+
+Para actualizar la base de Datos
+
+~~~console
+> php bin/console doctrine:fixtures:load
+
+> php bin/console doctrine:database:drop --force (Borra la base de Datos)
+
+> php bin/console doctrine:schema:update --force (Cuando se borra la base de Datos. Para cargar el Script que genera las tablas)
+~~~    
 
 #
 
@@ -168,3 +200,4 @@ Ver las Rutas habilitadas
 ```console
     > symfony console debug:route
 ```
+
